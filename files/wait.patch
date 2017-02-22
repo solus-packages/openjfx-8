@@ -1,0 +1,29 @@
+--- a/modules/fxpackager/src/main/native/library/common/PosixPlatform.cpp
++++ b/modules/fxpackager/src/main/native/library/common/PosixPlatform.cpp
+@@ -46,6 +46,7 @@
+ #include <iostream>
+ #include <dlfcn.h>
+ #include <signal.h>
++#include <sys/wait.h>
+
+
+ PosixPlatform::PosixPlatform(void) {
+@@ -227,17 +228,17 @@ bool PosixProcess::Execute(const TString Application, const std::vector<TString>
+   bool PosixProcess::Wait() {
+       bool result = false;
+  
+       int status;
+       pid_t wpid;
+  
+       //TODO Use waitpid instead of wait
+   #ifdef LINUX
+  -    wait();
+  +    wait(&status);
+   #endif
+   #ifdef MAC
+       wpid = wait(&status);
+   #endif
+  
+       if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
+           if (errno != EINTR){
+               status = -1;
