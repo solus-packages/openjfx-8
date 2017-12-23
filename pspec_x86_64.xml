@@ -6,7 +6,7 @@
             <Email>bmeyers@datadrake.com</Email>
         </Packager>
         <License>GPL-2.0</License>
-        <PartOf>programming</PartOf>
+        <PartOf>programming.java</PartOf>
         <Summary xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE</Summary>
         <Description xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
 </Description>
@@ -17,7 +17,7 @@
         <Summary xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE</Summary>
         <Description xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
 </Description>
-        <PartOf>programming</PartOf>
+        <PartOf>programming.java</PartOf>
         <Files>
             <Path fileType="library">/usr/lib64/openjdk-8/bin/javafxpackager</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/bin/javapackager</Path>
@@ -45,9 +45,9 @@
         </Files>
     </Package>
     <History>
-        <Update release="1">
-            <Date>2017-02-22</Date>
-            <Version>8.112</Version>
+        <Update release="2">
+            <Date>2017-12-23</Date>
+            <Version>8.172</Version>
             <Comment>Packaging update</Comment>
             <Name>Bryan T. Meyers</Name>
             <Email>bmeyers@datadrake.com</Email>

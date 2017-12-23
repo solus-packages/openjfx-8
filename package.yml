@@ -1,10 +1,10 @@
 name       : openjfx-8
-version    : '8.112'
-release    : 1
+version    : '8.172'
+release    : 2
 source     :
-    - http://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/52168af8bc02.tar.bz2 : c04024275c2d373fc92f2832c91b7326f83b8f7b7590c59dc7e27ecdd07bc286
+    - http://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/2991e8b097f3.tar.bz2 : 9d63ed315949362bbb14020c2e0251a872640e43b33d2a60982c0d815190a93b
 license    : GPL-2.0
-component  : programming
+component  : programming.java
 summary    : OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
 description: |
     OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
@@ -14,19 +14,20 @@ builddeps  :
     - pkgconfig(libavcodec)
     - pkgconfig(libxslt)
     - pkgconfig(Qt5Core)
-    - pkgconfig(ruby-2.2)
+    - pkgconfig(ruby-2.3)
     - pkgconfig(xtst)
     - gperf
     - gradle
     - openjdk-8-devel
+rundeps    :
+    - openjdk-8
 networking : yes
 setup      : |
     cp $pkgfiles/gradle.properties .
     %patch -p1 < $pkgfiles/gcc6.patch
-    %patch -p1 < $pkgfiles/pow.patch
 build      : |
     export GRADLE_USER_HOME=$workdir
-    gradle --no-daemon
+    gradle --no-daemon --stacktrace
 install    : |
     install -d $installdir/usr/lib64/openjdk-8/bin
     install -m 00755 build/sdk/bin/* $installdir/usr/lib64/openjdk-8/bin
