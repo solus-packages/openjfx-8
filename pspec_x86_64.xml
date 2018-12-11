@@ -2,10 +2,10 @@
     <Source>
         <Name>openjfx-8</Name>
         <Packager>
-            <Name>Bryan T. Meyers</Name>
-            <Email>bmeyers@datadrake.com</Email>
+            <Name>Philipp Trulson</Name>
+            <Email>philipp@trulson.de</Email>
         </Packager>
-        <License>GPL-2.0</License>
+        <License>GPL-2.0-or-later WITH Classpath-exception-2.0</License>
         <PartOf>programming.java</PartOf>
         <Summary xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE</Summary>
         <Description xml:lang="en">OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
@@ -25,6 +25,7 @@
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libdecora_sse.so</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libfxplugins.so</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libglass.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libglib-lite.so</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libgstreamer-lite.so</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjavafx_font.so</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjavafx_font_freetype.so</Path>
@@ -41,16 +42,17 @@
             <Path fileType="library">/usr/lib64/openjdk-8/lib/ant-javafx.jar</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/lib/javafx-mx.jar</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/lib/packager.jar</Path>
-            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="man">/usr/share/man/man1/javafxpackager.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javapackager.1</Path>
         </Files>
     </Package>
     <History>
-        <Update release="2">
-            <Date>2017-12-23</Date>
-            <Version>8.172</Version>
+        <Update release="3">
+            <Date>2018-12-09</Date>
+            <Version>8.192</Version>
             <Comment>Packaging update</Comment>
-            <Name>Bryan T. Meyers</Name>
-            <Email>bmeyers@datadrake.com</Email>
+            <Name>Philipp Trulson</Name>
+            <Email>philipp@trulson.de</Email>
         </Update>
     </History>
 </PISI>
