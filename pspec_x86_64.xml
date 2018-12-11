@@ -2,8 +2,8 @@
     <Source>
         <Name>openjfx-8</Name>
         <Packager>
-            <Name>Philipp Trulson</Name>
-            <Email>philipp@trulson.de</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Packager>
         <License>GPL-2.0-or-later WITH Classpath-exception-2.0</License>
         <PartOf>programming.java</PartOf>
@@ -47,12 +47,12 @@
         </Files>
     </Package>
     <History>
-        <Update release="3">
-            <Date>2018-12-09</Date>
+        <Update release="4">
+            <Date>2018-12-11</Date>
             <Version>8.192</Version>
             <Comment>Packaging update</Comment>
-            <Name>Philipp Trulson</Name>
-            <Email>philipp@trulson.de</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Update>
     </History>
 </PISI>

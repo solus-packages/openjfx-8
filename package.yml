@@ -1,6 +1,6 @@
 name       : openjfx-8
 version    : 8.192
-release    : 3
+release    : 4
 source     :
     - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u192-b10.tar.bz2 : 923db5bf61368ebcdda8733b8038cbebbd69d1faf3351958efd9de6f0d12dc80
 license    : GPL-2.0-or-later WITH Classpath-exception-2.0
