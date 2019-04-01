@@ -1,11 +1,12 @@
 name       : openjfx-8
 version    : 8.192
-release    : 4
+release    : 5
 source     :
     - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u192-b10.tar.bz2 : 923db5bf61368ebcdda8733b8038cbebbd69d1faf3351958efd9de6f0d12dc80
 license    : GPL-2.0-or-later WITH Classpath-exception-2.0
 component  : programming.java
-summary    : OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
+summary    : OpenJFX is an open source, next generation client application platform
+    for desktop and embedded systems based on JavaSE
 description: |
     OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
 builddeps  :
@@ -13,7 +14,7 @@ builddeps  :
     - pkgconfig(gtk+-2.0)
     - pkgconfig(libavcodec)
     - pkgconfig(Qt5Core)
-    - pkgconfig(ruby-2.3)
+    - pkgconfig(ruby-2.6)
     - pkgconfig(xtst)
     - gperf
     - gradle
