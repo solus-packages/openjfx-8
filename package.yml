@@ -1,6 +1,6 @@
 name       : openjfx-8
 version    : '8.201'
-release    : 6
+release    : 7
 source     :
     - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u201-ga.tar.bz2 : a5f69e13deaf36002ab597e3e630fd4e3a7162755245a8762e1a6e5a6e75b848
 license    : GPL-2.0-or-later WITH Classpath-exception-2.0
@@ -30,16 +30,14 @@ build      : |
     export GRADLE_USER_HOME=$workdir
     gradle --no-daemon --stacktrace
 install    : |
-    install -d $installdir/usr/lib64/openjdk-8/bin
-    install -m 00755 build/sdk/bin/* $installdir/usr/lib64/openjdk-8/bin
+    install -Dm00755 build/sdk/bin/* -t $installdir/usr/lib64/openjdk-8/bin
 
-    install -d $installdir/usr/lib64/openjdk-8/jre/lib/{amd64,ext}
-    install -m 00755 build/sdk/rt/lib/amd64/* $installdir/usr/lib64/openjdk-8/jre/lib/amd64
-    install -m 00644 build/sdk/rt/lib/ext/* $installdir/usr/lib64/openjdk-8/jre/lib/ext
-    install -m 00644 build/sdk/rt/lib/*.* $installdir/usr/lib64/openjdk-8/jre/lib
+    install -dm00755 $installdir/usr/lib64/openjdk-8/jre
+    cp -a build/sdk/rt/lib $installdir/usr/lib64/openjdk-8/jre
+    cp -a build/sdk/lib $installdir/usr/lib64/openjdk-8
 
-    install -d $installdir/usr/lib64/openjdk-8/lib
-    install -m 00644 build/sdk/lib/* $installdir/usr/lib64/openjdk-8/lib
-
-    install -d $installdir/usr/share/man/man1
-    install -m 00644 build/sdk/man/man1/* $installdir/usr/share/man/man1
+    # Sort out the manpages (with a "-8" suffix)
+    install -dm00755 $installdir/usr/share
+    cp -a build/sdk/man $installdir/usr/share
+    mv $installdir/usr/share/man/ja_JP.UTF-8 $installdir/usr/share/man/ja
+    find $installdir/usr/share/man -type f -exec rename -- .1 -8.1 {} \;

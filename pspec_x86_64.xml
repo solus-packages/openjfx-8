@@ -2,8 +2,8 @@
     <Source>
         <Name>openjfx-8</Name>
         <Packager>
-            <Name>Campbell Jones</Name>
-            <Email>dev@serebit.com</Email>
+            <Name>Fabio Forni</Name>
+            <Email>livingsilver94.solus@redaril.me</Email>
         </Packager>
         <License>GPL-2.0-or-later WITH Classpath-exception-2.0</License>
         <PartOf>programming.java</PartOf>
@@ -42,17 +42,19 @@
             <Path fileType="library">/usr/lib64/openjdk-8/lib/ant-javafx.jar</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/lib/javafx-mx.jar</Path>
             <Path fileType="library">/usr/lib64/openjdk-8/lib/packager.jar</Path>
-            <Path fileType="man">/usr/share/man/man1/javafxpackager.1</Path>
-            <Path fileType="man">/usr/share/man/man1/javapackager.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javafxpackager-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javapackager-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javafxpackager-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javapackager-8.1</Path>
         </Files>
     </Package>
     <History>
-        <Update release="6">
-            <Date>2019-11-15</Date>
+        <Update release="7">
+            <Date>2020-05-01</Date>
             <Version>8.201</Version>
             <Comment>Packaging update</Comment>
-            <Name>Campbell Jones</Name>
-            <Email>dev@serebit.com</Email>
+            <Name>Fabio Forni</Name>
+            <Email>livingsilver94.solus@redaril.me</Email>
         </Update>
     </History>
 </PISI>
