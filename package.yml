@@ -1,6 +1,6 @@
 name       : openjfx-8
 version    : '8.201'
-release    : 7
+release    : 8
 source     :
     - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u201-ga.tar.bz2 : a5f69e13deaf36002ab597e3e630fd4e3a7162755245a8762e1a6e5a6e75b848
 license    : GPL-2.0-or-later WITH Classpath-exception-2.0
@@ -13,7 +13,7 @@ builddeps  :
     - pkgconfig(gtk+-2.0)
     - pkgconfig(libavcodec)
     - pkgconfig(Qt5Core)
-    - pkgconfig(ruby-2.6)
+    - pkgconfig(ruby-2.7)
     - pkgconfig(xtst)
     - gperf
     - gradle
