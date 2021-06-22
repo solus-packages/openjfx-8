@@ -1,8 +1,7 @@
-From 048a5ff439bd6e969fd9ccda56d3a74447850090 Mon Sep 17 00:00:00 2001
-From: Philipp Trulson <philipp@trulson.de>
-Date: Tue, 23 Oct 2018 11:04:08 +0200
-Subject: [PATCH] Fix build errors. Disabling xlocale, because it's missing in
- newer glibc.
+From cc9ea3c44468e72817a30a17b798f61b5903fb79 Mon Sep 17 00:00:00 2001
+From: Campbell Jones <git@serebit.com>
+Date: Sat, 19 Jun 2021 13:15:15 -0400
+Subject: [PATCH] Unset xlocale macro in media and web
 
 ---
  .../3rd_party/glib/glib-2.56.1/build/linux/x64/config.h         | 2 +-
@@ -10,7 +9,7 @@ Subject: [PATCH] Fix build errors. Disabling xlocale, because it's missing in
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/modules/media/src/main/native/gstreamer/3rd_party/glib/glib-2.56.1/build/linux/x64/config.h b/modules/media/src/main/native/gstreamer/3rd_party/glib/glib-2.56.1/build/linux/x64/config.h
-index 1359356..c448395 100644
+index 13593560..9b6eb4e8 100644
 --- a/modules/media/src/main/native/gstreamer/3rd_party/glib/glib-2.56.1/build/linux/x64/config.h
 +++ b/modules/media/src/main/native/gstreamer/3rd_party/glib/glib-2.56.1/build/linux/x64/config.h
 @@ -646,7 +646,7 @@
@@ -18,12 +17,12 @@ index 1359356..c448395 100644
  
  /* Define to 1 if you have the <xlocale.h> header file. */
 -#define HAVE_XLOCALE_H 1
-+/* #undef HAVE_XLOCALE_H */
++/* #define HAVE_XLOCALE_H 1 */
  
  /* Define to 1 if you have the `_NSGetEnviron' function. */
  /* #undef HAVE__NSGETENVIRON */
 diff --git a/modules/web/src/main/native/Source/ThirdParty/libxslt/linux/config.h b/modules/web/src/main/native/Source/ThirdParty/libxslt/linux/config.h
-index bd44c16..566bf64 100644
+index bd44c163..b19b45f4 100644
 --- a/modules/web/src/main/native/Source/ThirdParty/libxslt/linux/config.h
 +++ b/modules/web/src/main/native/Source/ThirdParty/libxslt/linux/config.h
 @@ -143,7 +143,7 @@
@@ -31,10 +30,10 @@ index bd44c16..566bf64 100644
  
  /* Define to 1 if you have the <xlocale.h> header file. */
 -#define HAVE_XLOCALE_H 1
-+/* #undef HAVE_XLOCALE_H */
++/* #define HAVE_XLOCALE_H 1 */
  
  /* Define to 1 if you have the `_stat' function. */
  /* #undef HAVE__STAT */
 -- 
-2.19.1
+2.30.2
 

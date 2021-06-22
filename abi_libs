@@ -2,6 +2,8 @@ libavplugin.so
 libdecora_sse.so
 libfxplugins.so
 libglass.so
+libglassgtk2.so
+libglassgtk3.so
 libglib-lite.so
 libgstreamer-lite.so
 libjavafx_font.so

@@ -1,34 +1,36 @@
 name       : openjfx-8
-version    : '8.201'
+version    : '8.202'
 release    : 8
 source     :
-    - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u201-ga.tar.bz2 : a5f69e13deaf36002ab597e3e630fd4e3a7162755245a8762e1a6e5a6e75b848
+    - https://hg.openjdk.java.net/openjfx/8u-dev/rt/archive/8u202-ga.tar.bz2 : 12b0538d04c4bd451e4692ee06357ac36233ff4ec2af9fa3b9bbdbab48c3f2fc
 license    : GPL-2.0-or-later WITH Classpath-exception-2.0
 component  : programming.java
-summary    : OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
+homepage   : https://openjfx.io/
+summary    : Open source client application platform for desktop and embedded systems based on Java
 description: |
-    OpenJFX is an open source, next generation client application platform for desktop and embedded systems based on JavaSE
+    JavaFX is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java. It is a collaborative effort by many individuals and companies with the goal of producing a modern, efficient, and fully featured toolkit for developing rich client applications.
 builddeps  :
     - pkgconfig(alsa)
     - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
     - pkgconfig(libavcodec)
-    - pkgconfig(Qt5Core)
     - pkgconfig(ruby-2.7)
     - pkgconfig(xtst)
+    - pkgconfig(xxf86vm)
     - gperf
-    - gradle
     - openjdk-8-devel
 rundeps    :
     - openjdk-8
 networking : yes
 setup      : |
     cp $pkgfiles/gradle.properties .
-    %patch -p1 < $pkgfiles/0001-GCC6-fix.patch
-    %patch -p1 < $pkgfiles/0002-Fix-build-errors.patch
-    %patch -p1 < $pkgfiles/0003-Disable-compiler-errors.patch
+    %apply_patches
+    chmod +x gradlew
 build      : |
-    export GRADLE_USER_HOME=$workdir
-    gradle --no-daemon --stacktrace
+    export JAVA_HOME=/usr/lib64/openjdk-8
+    export GRADLE_USER_HOME=$workdir/.gradle_home
+
+    ./gradlew --no-daemon --stacktrace
 install    : |
     install -Dm00755 build/sdk/bin/* -t $installdir/usr/lib64/openjdk-8/bin
 

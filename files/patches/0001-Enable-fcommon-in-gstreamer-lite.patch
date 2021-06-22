@@ -1,0 +1,30 @@
+From 294a9cb4319d0298ed855a64323a8691d2e8bd6a Mon Sep 17 00:00:00 2001
+From: Campbell Jones <git@serebit.com>
+Date: Sat, 19 Jun 2021 15:08:42 -0400
+Subject: [PATCH] Enable fcommon in gstreamer-lite
+
+---
+ .../native/gstreamer/projects/linux/gstreamer-lite/Makefile    | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/modules/media/src/main/native/gstreamer/projects/linux/gstreamer-lite/Makefile b/modules/media/src/main/native/gstreamer/projects/linux/gstreamer-lite/Makefile
+index 8634b559..0dd6c805 100644
+--- a/modules/media/src/main/native/gstreamer/projects/linux/gstreamer-lite/Makefile
++++ b/modules/media/src/main/native/gstreamer/projects/linux/gstreamer-lite/Makefile
+@@ -42,6 +42,7 @@ DIRLIST = gstreamer/gst \
+ TARGET = $(BUILD_DIR)/lib$(BASE_NAME).so
+ 
+ CFLAGS =-fPIC                   \
++		-fcommon                \
+         -Wformat                \
+         -Wextra                 \
+         -Wformat-security       \
+@@ -289,4 +290,4 @@ $(TARGET_DIRS):
+ 	mkdir -p $(TARGET_DIRS)
+ 
+ $(TARGET): $(OBJECTS)
+-	$(CC) -shared $(OBJECTS) $(LDFLAGS) -o $@
++	$(CC) -shared $(CFLAGS) $(OBJECTS) $(LDFLAGS) -o $@
+-- 
+2.30.2
+

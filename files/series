@@ -1,0 +1,4 @@
+patches/0000-Fix-wait-call-in-PosixPlatform.patch
+patches/0001-Unset-xlocale-macro-in-media-and-web.patch
+patches/0001-Enable-fcommon-in-gstreamer-lite.patch
+patches/nowerror.patch
